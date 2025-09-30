@@ -1,41 +1,49 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const links = document.querySelectorAll('.nav-link');
-    const sections = document.querySelectorAll('.content-section');
+    // --- Existing Interactive Text Section ---
+    const realTimeInput = document.getElementById('realtime-input');
+    const realTimeOutput = document.getElementById('realtime-output');
 
-    function setActiveLink() {
-        let index = sections.length;
-        while (--index && window.scrollY + 50 < sections[index].offsetTop) {}
-
-        links.forEach((link) => link.classList.remove('active'));
-        if (index >= 0) {
-            links[index].classList.add('active');
-        }
+    if (realTimeInput && realTimeOutput) {
+        realTimeInput.addEventListener('input', function() {
+            realTimeOutput.textContent = realTimeInput.value;
+        });
     }
 
-    function showSection(sectionId) {
-        sections.forEach(section => {
-            if (section.id === sectionId) {
-                section.classList.remove('hidden');
-                section.classList.add('fade-in');
-            } else {
-                section.classList.add('hidden');
-                section.classList.remove('fade-in');
+    // --- Enhanced Animation on Scroll ---
+    const animatedElements = document.querySelectorAll('.animate-on-scroll');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const delay = parseInt(entry.target.getAttribute('data-delay') || '0');
+                
+                setTimeout(() => {
+                    entry.target.classList.add('is-visible');
+                }, delay);
+
+                observer.unobserve(entry.target); // Animate only once
             }
         });
-    }
+    }, {
+        threshold: 0.1
+    });
 
-    showSection('introduction');
+    animatedElements.forEach(element => {
+        observer.observe(element);
+    });
 
-    links.forEach(link => {
-        link.addEventListener('click', (e) => {
-            e.preventDefault();
-            const targetId = link.getAttribute('href').substring(1);
-            showSection(targetId);
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+    // --- Existing PDF Export ---
+    const exportButton = document.getElementById('export-pdf');
+    if (exportButton) {
+        exportButton.addEventListener('click', function() {
+            const element = document.querySelector('.container');
+            const opt = {
+                margin:       0.5,
+                filename:     'Muhammad_Omar_Berliansyah_Portfolio.pdf',
+                image:        { type: 'jpeg', quality: 0.98 },
+                html2canvas:  { scale: 2 },
+                jsPDF:        { unit: 'in', format: 'letter', orientation: 'portrait' }
+            };
+            html2pdf().set(opt).from(element).save();
         });
-    });
-
-    window.addEventListener('scroll', () => {
-        setActiveLink();
-    });
+    }
 });

@@ -4,78 +4,131 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Muhammad Omar Berliansyah - Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styling.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Lora:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 </head>
 <body>
+    <div class="container">
+        <header class="main-header animate-on-scroll" data-animation="fade-in-down">
+            <img src="Self Image.jpg" alt="Muhammad Omar Berliansyah" class="profile-picture">
+            <h1 class="main-title">Muhammad Omar Berliansyah</h1>
+            <p class="subtitle">Information Systems and Technology Student</p>
+            <div class="about-section">
+                <p>Undergraduate student at Bandung Institute of Technology, with a strong interest in Software Engineering, AI, and Cyber Security.</p>
+                <p>My goal is to leverage my experience in Web Development and Software Engineering to build innovative and secure technological solutions.</p>
+            </div>
+        </header>
 
-<header>
-    <div class="hero">
-        <h1>Greetings!</h1>
+        <main>
+            <section class="content-section">
+                <h2 class="section-title animate-on-scroll" data-animation="fade-in-up">Experience</h2>
+                <div class="timeline">
+                    <div class="timeline-item animate-on-scroll" data-animation="fade-in-left">
+                        <h3>Frontend Developer Intern at Fata Organa</h3>
+                        <p class="timeline-duration">Aug 2025 - Present</p>
+                        <p>Developing and maintaining responsive, user-facing features for web applications, focusing on creating a seamless user experience and implementing new features.</p>
+                        <div class="tags"><span>Next.js</span><span>Tailwind CSS</span><span>React</span><span>Vercel</span><span>Git</span></div>
+                    </div>
+                    <div class="timeline-item animate-on-scroll" data-animation="fade-in-left">
+                        <h3>Frontend Developer at SatuEdu</h3>
+                        <p class="timeline-duration">Feb 2025 - Nov 2025</p>
+                        <p>Led a complete website overhaul, focusing on modern design implementation and significant performance improvements. Rebranded the UI/UX and reduced load times by 20%.</p>
+                        <div class="tags"><span>Next.js</span><span>Tailwind CSS</span><span>DatoCMS</span><span>Vercel</span><span>CI/CD</span></div>
+                    </div>
+                     <div class="timeline-item animate-on-scroll" data-animation="fade-in-left">
+                        <h3>Graphic Design Staff at ARKAVIDIA</h3>
+                        <p class="timeline-duration">Nov 2024 - May 2025</p>
+                        <p>Responsible for creating visual assets for various events and promotional campaigns, enhancing communication and visual branding.</p>
+                        <div class="tags"><span>Figma</span><span>Canva</span></div>
+                    </div>
+                </div>
+            </section>
 
-        <p>Welcome to my self resume</p>
-        <ul>
-        <nav>
-            <a href="#introduction" class="nav-link">Introduction</a>
-            <a href="#talent" class="nav-link">Talent and Interest</a>
-            <a href="#project" class="nav-link">Project</a>
-            <a href="#skills" class="nav-link">Skillset</a>
-        </nav>
-        </ul>
+            <section class="content-section">
+                <h2 class="section-title animate-on-scroll" data-animation="fade-in-up">Academic Projects</h2>
+                <div class="projects-grid">
+                    <div class="project-card animate-on-scroll" data-animation="fade-in-up">
+                        <h3>Spakbor Hills</h3>
+                        <p class="project-category">Final Project for Object Oriented Programming</p>
+                        <p>An open-world farm life simulation game. Engineered using an MVC architecture with Java Swing and utilized Factory, State, and Observer design patterns.</p>
+                        <div class="tags"><span>Java</span><span>Multithreading</span><span>Java Swing</span></div>
+                    </div>
+                    <div class="project-card animate-on-scroll" data-animation="fade-in-up" data-delay="100">
+                        <h3>Supermarket Simulator</h3>
+                        <p class="project-category">Final Project for Algorithm and Data Structure</p>
+                        <p>A simulation featuring an item queuing system, wishlist functionality, and integrated DNA alignment tools using the Needleman-Wunsch algorithm.</p>
+                        <div class="tags"><span>C</span></div>
+                    </div>
+                    <div class="project-card animate-on-scroll" data-animation="fade-in-up" data-delay="200">
+                        <h3>Healthcare Information System</h3>
+                        <p class="project-category">Desktop Application</p>
+                        <p>A desktop application for a hospital management system with appointment, medical record, and medication stock management using JDBC.</p>
+                        <div class="tags"><span>Java</span><span>JDBC</span><span>MySQL</span><span>FXML</span></div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h2 class="section-title animate-on-scroll" data-animation="fade-in-up">Skills</h2>
+                <div class="skills-container">
+                    <div class="skill-category animate-on-scroll" data-animation="fade-in-up">
+                        <h3>Languages</h3>
+                        <div class="tags"><span>Python</span><span>C</span><span>C++</span><span>Java</span><span>SQL</span><span>JavaScript</span><span>Ruby</span></div>
+                    </div>
+                    <div class="skill-category animate-on-scroll" data-animation="fade-in-up" data-delay="100">
+                        <h3>Frameworks & Tools</h3>
+                        <div class="tags"><span>React</span><span>Next.js</span><span>Prisma</span><span>Docker</span><span>Vercel</span><span>Figma</span><span>Git</span></div>
+                    </div>
+                    <div class="skill-category animate-on-scroll" data-animation="fade-in-up" data-delay="200">
+                        <h3>Knowledge</h3>
+                        <div class="tags"><span>Cybersecurity</span><span>Relational Databases</span><span>SDLC</span><span>UI/UX Design</span></div>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="content-section">
+                 <div class="grid-2-col">
+                    <div class="animate-on-scroll" data-animation="fade-in-up">
+                        <h2 class="section-title">Certificates</h2>
+                        <ul class="list">
+                            <li>ISC2 Certified in Cybersecurity (CC)</li>
+                            <li>FREE TensorFlow-Keras Bootcamp</li>
+                            <li>React (Progate)</li>
+                            <li>SQL & Problem Solving (HackerRank)</li>
+                        </ul>
+                    </div>
+                    <div class="animate-on-scroll" data-animation="fade-in-up" data-delay="100">
+                        <h2 class="section-title">Achievements</h2>
+                        <ul class="list">
+                            <li>Top 10 Data Mining Hology 8.0 (2025)</li>
+                            <li>Data Analyst FindIT, UGM (2025)</li>
+                            <li>Data Analytic Dash COMPFEST, UI (2024 & 2025)</li>
+                            <li>CTF Hology, UB (2024)</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section class="content-section animate-on-scroll" data-animation="fade-in-up">
+                <h2 class="section-title">Interactive Section</h2>
+                <p>Type in the text area below and see your text appear in real-time!</p>
+                <textarea id="realtime-input" placeholder="Start typing..."></textarea>
+                <div class="output-area">
+                    <p id="realtime-output"></p>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <div class="social-links">
+                <a href="https://www.instagram.com/omarberliansyah/" target="_blank"><img src="Instagram_icon.png" alt="Instagram" class="social-icon"></a>
+                <a href="https://twitter.com/Levannzz" target="_blank"><img src="twitter_icon.png" alt="Twitter" class="social-icon"></a>
+                <a href="https://github.com/OmarBerliansyah" target="_blank"><img src="github_logo.png" alt="GitHub" class="social-icon"></a>
+            </div>
+            <button id="export-pdf">Export to PDF</button>
+        </footer>
     </div>
-</header>
-
-<main>
-    <section id="introduction" class="content-section hidden">
-        <img src="Self Image.jpg" alt="Muhammad Omar Berliansyah" class="profile-picture">
-        <h2>Introduction</h2>
-        <ul></ul>
-        <justify>
-        <p>Hello! I'm Muhammad Omar Berliansyah</p>
-        <p>2nd year student in Information Technology System at Bandung Institute of Technology</p>
-        <p>Hopefully, I can fill this page with upcoming achievements and many great things coming</p></justify>
-        <div class="social-links">
-            <center>Social Media
-            <ul></ul>
-            <a href="https://www.instagram.com/omarberliansyah/" target="_blank">
-                <img src="Instagram_icon.png" alt="Instagram" class="social-icon">
-            </a>
-            <a href="https://twitter.com/Levannzz" target="_blank">
-                <img src="Twitter_icon.png" alt="Twitter" class="social-icon">
-            </a>
-            <a href="https://github.com/settings/copilot" target="_blank">
-                <img src="github_logo.png" alt="GitHub" class="social-icon">
-            </a>
-        </div>
-    </section>
-
-    <section id="talent" class="content-section hidden">
-        <h2>Talent and Interest</h2>
-        <ul></ul>
-        <p>Interested in the trend of Data Science, AI, and currently trying to meddle in Web Development, especially Front-End</p>
-        <p>I'm also on a positive trajectory in Math, Physics, and Computational Logic since my Sophomore year in high school</p>
-    </section>
-
-    <section id="project" class="content-section hidden">
-        <h2>Project</h2>
-        <ul></ul>
-        <p>I'm already involved in some projects, one of them being the Final Project in Programming Fundamentals at the end of my 2nd semester</p>
-    </section>
-
-    <section id="skills" class="content-section hidden">
-        <h2>Skillset</h2>
-        <ul></ul>
-        <p>Fundamentals of programming<p>
-        <p>Data Visualization and Analysis (in progress)<p>
-        <p>Fundamentals of Cyber Security (in progress)<p>
-        <p>Languages:<p>
-            <li>Python</li>
-            <li>C/C++ (in progress)</li>
-            <li>HTML-CSS-Javascript (in progress)</li>
-        </ul>
-    </section>
-</main>
-
-<script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
